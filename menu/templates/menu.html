@@ -1,0 +1,30 @@
+{% load menu_loader %}
+
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Menu</title>
+   <style></style>
+</head>
+<body>
+   {% for items in category_list %}
+         <ul><a href="{{ items.slug }}">{{ items.title }}</a> </ul>
+   {% if items != '{}' %}
+    <details>
+            <summary>
+
+            </summary>
+            <div class="menu_item">
+            {% recursive_func items %}
+            </div>
+    </details>
+   {% endif %}
+    {% endfor %}
+
+</body>
+<script>
+
+</script>
+</html>
+
+

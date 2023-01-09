@@ -14,6 +14,7 @@ services:
 
     ports:
       - "8000:8000"
+      - "3000:3000"
 
   db:
     container_name: menu_db

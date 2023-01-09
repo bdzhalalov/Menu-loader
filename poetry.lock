@@ -10,6 +10,14 @@ python-versions = ">=3.7"
 tests = ["mypy (>=0.800)", "pytest", "pytest-asyncio"]
 
 [[package]]
+name = "debugpy"
+version = "1.6.5"
+description = "An implementation of the Debug Adapter Protocol for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "django"
 version = "4.1.4"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -25,6 +33,18 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-debug-toolbar"
+version = "3.8.1"
+description = "A configurable set of panels that display various debug information about the current request/response."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+django = ">=3.2.4"
+sqlparse = ">=0.2"
 
 [[package]]
 name = "psycopg2-binary"
@@ -64,16 +84,40 @@ python-versions = ">=2"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "da1b005c5270ae1795a88046317c937b8cf24d45d959a4f46528b6179daf3a40"
+content-hash = "15e9b29040f87fbaf012948046e50c2d601f14c88eae0e7d8a01a0b10b0b5990"
 
 [metadata.files]
 asgiref = [
     {file = "asgiref-3.6.0-py3-none-any.whl", hash = "sha256:71e68008da809b957b7ee4b43dbccff33d1b23519fb8344e33f049897077afac"},
     {file = "asgiref-3.6.0.tar.gz", hash = "sha256:9567dfe7bd8d3c8c892227827c41cce860b368104c3431da67a0c5a65a949506"},
 ]
+debugpy = [
+    {file = "debugpy-1.6.5-cp310-cp310-macosx_11_0_x86_64.whl", hash = "sha256:696165f021a6a17da08163eaae84f3faf5d8be68fb78cd78488dd347e625279c"},
+    {file = "debugpy-1.6.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:17039e392d6f38388a68bd02c5f823b32a92142a851e96ba3ec52aeb1ce9d900"},
+    {file = "debugpy-1.6.5-cp310-cp310-win32.whl", hash = "sha256:62a06eb78378292ba6c427d861246574dc8b84471904973797b29dd33c7c2495"},
+    {file = "debugpy-1.6.5-cp310-cp310-win_amd64.whl", hash = "sha256:9984fc00ab372c97f63786c400107f54224663ea293daab7b365a5b821d26309"},
+    {file = "debugpy-1.6.5-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:048368f121c08b00bbded161e8583817af5055982d2722450a69efe2051621c2"},
+    {file = "debugpy-1.6.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:74e4eca42055759032e3f1909d1374ba1d729143e0c2729bb8cb5e8b5807c458"},
+    {file = "debugpy-1.6.5-cp37-cp37m-win32.whl", hash = "sha256:0f9afcc8cad6424695f3356dc9a7406d5b18e37ee2e73f34792881a44b02cc50"},
+    {file = "debugpy-1.6.5-cp37-cp37m-win_amd64.whl", hash = "sha256:b5a74ecebe5253344501d9b23f74459c46428b30437fa9254cfb8cb129943242"},
+    {file = "debugpy-1.6.5-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:9e809ef787802c808995e5b6ade714a25fa187f892b41a412d418a15a9c4a432"},
+    {file = "debugpy-1.6.5-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:947c686e8adb46726f3d5f19854f6aebf66c2edb91225643c7f44b40b064a235"},
+    {file = "debugpy-1.6.5-cp38-cp38-win32.whl", hash = "sha256:377391341c4b86f403d93e467da8e2d05c22b683f08f9af3e16d980165b06b90"},
+    {file = "debugpy-1.6.5-cp38-cp38-win_amd64.whl", hash = "sha256:286ae0c2def18ee0dc8a61fa76d51039ca8c11485b6ed3ef83e3efe8a23926ae"},
+    {file = "debugpy-1.6.5-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:500dd4a9ff818f5c52dddb4a608c7de5371c2d7d905c505eb745556c579a9f11"},
+    {file = "debugpy-1.6.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8f3fab217fe7e2acb2d90732af1a871947def4e2b6654945ba1ebd94bd0bea26"},
+    {file = "debugpy-1.6.5-cp39-cp39-win32.whl", hash = "sha256:15bc5febe0edc79726517b1f8d57d7ac7c784567b5ba804aab8b1c9d07a57018"},
+    {file = "debugpy-1.6.5-cp39-cp39-win_amd64.whl", hash = "sha256:7e84d9e4420122384cb2cc762a00b4e17cbf998022890f89b195ce178f78ff47"},
+    {file = "debugpy-1.6.5-py2.py3-none-any.whl", hash = "sha256:8116e40a1cd0593bd2aba01d4d560ee08f018da8e8fbd4cbd24ff09b5f0e41ef"},
+    {file = "debugpy-1.6.5.zip", hash = "sha256:5e55e6c79e215239dd0794ee0bf655412b934735a58e9d705e5c544f596f1603"},
+]
 django = [
     {file = "Django-4.1.4-py3-none-any.whl", hash = "sha256:0b223bfa55511f950ff741983d408d78d772351284c75e9f77d2b830b6b4d148"},
     {file = "Django-4.1.4.tar.gz", hash = "sha256:d38a4e108d2386cb9637da66a82dc8d0733caede4c83c4afdbda78af4214211b"},
+]
+django-debug-toolbar = [
+    {file = "django_debug_toolbar-3.8.1-py3-none-any.whl", hash = "sha256:879f8a4672d41621c06a4d322dcffa630fc4df056cada6e417ed01db0e5e0478"},
+    {file = "django_debug_toolbar-3.8.1.tar.gz", hash = "sha256:24ef1a7d44d25e60d7951e378454c6509bf536dce7e7d9d36e7c387db499bc27"},
 ]
 psycopg2-binary = [
     {file = "psycopg2-binary-2.9.5.tar.gz", hash = "sha256:33e632d0885b95a8b97165899006c40e9ecdc634a529dca7b991eb7de4ece41c"},
