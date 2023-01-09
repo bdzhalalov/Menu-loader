@@ -40,7 +40,8 @@ def draw_menu(context, name):
 
 
 @register.inclusion_tag('menu.html', takes_context=True)
-def recursive_func(context, object):
+def draw_subcategory(context, object):
+
     data = context['category_list'][object]
 
     loaded_context = {

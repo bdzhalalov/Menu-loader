@@ -8,16 +8,17 @@
 </head>
 <body>
    {% for items in category_list %}
-         <ul><a href="{{ items.slug }}">{{ items.title }}</a> </ul>
-   {% if items != '{}' %}
-    <details>
-            <summary>
+         <ul><a href="{{ items.slug }}">{{ items.title }}</a>
+            {% if items != '{}' %}
+            <li><details>
+                    <summary>
 
-            </summary>
-            <div class="menu_item">
-            {% recursive_func items %}
-            </div>
-    </details>
+                    </summary>
+                    <div class="menu_item">
+                    {% draw_subcategory items %}
+                    </div>
+                </details></li>
+         </ul>
    {% endif %}
     {% endfor %}
 
